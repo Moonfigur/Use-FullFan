@@ -1,25 +1,147 @@
- <!DOCTYPE html>
- <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ANDROID</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="Phone-layout">
+      <div id="camera">
+        <div></div>
+      </div>
 
- <head>
-  <title>Working Fan CSS</title>
-  <!--Stylesheet-->
-  <link rel="stylesheet" href="style.css">
- </head>
+      <!-- notifiation -->
+      <div id="notificatonPannel" onclick="notification()">
+        <div class="leftSide">
+          <!--  -->
+            <div id="time">00:00</div>
+        </div>
 
- <body>
-   <div class="title">
-     <h1>!! Click The Fan !!</h1>
-   </div>
-  <div class="fan">
-   <input type="checkbox" id="btn">
-   <label for="btn">
-    <span></span>
-    <span></span>
-    <span></span>
-   </label>
-   <div class="base"></div>
-  </div>
- </body>
+        <div class="rightSide">
 
- </html>
+          <img src="/images/notification/5g.png" alt="" />
+          <img src="/images/notification/connection.png" alt="" />
+          <span >91%</span>
+          <img src="/images/notification/battery.png" alt="" />
+        </div>
+      </div>
+
+      <div id="grid">
+        <div id="G1">
+          <div class="app"></div>
+          <div class="app"></div>
+          <div class="app"></div>
+          <div class="app"></div>
+        </div>
+        <div id="G2">
+          <div class="app"></div>
+          <div class="app"></div>
+          <div class="app"></div>
+          <div class="app"></div>
+        </div>
+        <div id="G3">
+          <div class="app"></div>
+          <div class="app"></div>
+          <div class="app"></div>
+          <div class="app"></div>
+        </div>
+        <div id="G4">
+          <div class="app"></div>
+          <div class="app"></div>
+          <div class="app"></div>
+          <div class="app"></div>
+        </div>
+        <div id="G5">
+          <div class="app"></div>
+          <div class="app"></div>
+          <div class="app"></div>
+          <div class="app"></div>
+        </div>
+        <div id="G6">
+          <div class="app">
+            <img src="/images/Apps/youtube.png" alt="" />
+            <span>Youtube</span>
+          </div>
+          <div class="app">
+            <img
+              src="/images/Apps/facebook messenger.png"
+              alt=""
+              onclick="messenger()"
+            />
+            <span>messenger</span>
+          </div>
+          <div class="app">
+            <img
+              src="/images/Apps/instagram.png"
+              alt=""
+              onclick="instagram()"
+            />
+            <span>instagram</span>
+          </div>
+          <div class="app">
+            <img src="/images/Apps/spotify1.png" alt="" onclick="spotify()" />
+            <span>spotify</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- dock drawer + app drawr opening -->
+
+      <div id="dock">
+        <div class="dockApps">
+            <div class="app">
+                <img src="/images/Apps/phone.png" alt="" onclick="">
+                <span>Phone</span>
+            </div>
+        <div class="app">
+            <img src="/images/Apps/message.png" alt="" onclick="">
+            <span>Message</span>
+        </div>
+        <div class="app">
+            <img src="/images/Apps/camera.png" alt="" onclick="">
+            <span>Camera</span>
+        </div>
+        <div class="app">
+            <img src="/images/Apps/apps.png" alt="" onclick="appDrawer()" id="drawer">
+            <span>Apps</span>
+        </div>
+        </div>
+        
+      </div>
+
+       <div id="container">
+      <!-- Bottom nav bar -->
+      <div id="nav-buttons">
+        <img
+          src="/images/buttons/recent.png"
+          alt="Recent"
+          onclick="showRecent()"
+        />
+        <img src="/images/buttons/home.png" alt="Home"  />
+        
+        <img src="/images/buttons/back.png" alt="Back" onclick="goBack()" />
+      </div>
+    </div>
+    </div>
+
+    <div id="buttons">
+        <div id="volumeKey">
+          <div id="volumeUp"></div>
+          <div id="volumeDown"></div>
+        </div>
+        
+        <div id="powerKey" ></div>
+    </div>
+    
+    
+    <audio id="offSound" src="/Audio/screenLock.wav" ></audio>
+
+    <script src="script.js" ></script>
+  </body>
+</html>
