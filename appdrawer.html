@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ANDROID</title>
+    <link rel="stylesheet" href="drawerStyle.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="Phone-layout">
+      <div id="camera">
+        <div></div>
+      </div>
+
+      <!-- notifiation -->
+      <div id="notificatonPannel" onclick="notification()">
+        <div class="leftSide">
+          <!--  -->
+            <div id="time">00:00</div>
+        </div>
+
+        <div class="rightSide">
+
+          <img src="/images/notification/5g.png" alt="" />
+          <img src="/images/notification/connection.png" alt="" />
+          <span >91%</span>
+          <img src="/images/notification/battery.png" alt="" />
+        </div>
+      </div>
+
+
+      <div id="searchContainer"> 
+       <form id="searchbar">
+            <input id="searchInput" placeholder="Search...">
+            <button id="searchIcon"><img src="/images/buttons/searchIcon.png" ></button>
+        </form>
+      </div>
+
+      <div id="grid">
+        
+
+        <div id="G1">
+          <div class="app">
+            <img src="/images/Apps/calculator.png" alt="">
+            <span>calculator</span>
+          </div>
+          <div class="app">
+            <img src="/images/Apps/calendar.png" alt="">
+            <span>Calender</span>
+          </div>
+          <div class="app">
+            <img src="/images/Apps/camera.png" alt="">
+            <span>Camera</span>
+          </div>
+          <div class="app">
+            <img src="/images/Apps/Chrome.png" alt="">
+            <span>Chrome</span>
+          </div>
+        </div>
+        <div id="G2">
+          <div class="app">
+            <img src="/images/Apps/Clock.png" alt="">
+            <span>Clock</span>
+          </div>
+          <div class="app">
+            <img src="/images/Apps/facebook messenger.png" alt="">
+            <span>Massenger</span>
+          </div>
+          <div class="app">
+            <img src="/images/Apps/Facebook.png" alt="">
+            <span>Facebook</span>
+          </div>
+          <div class="app">
+            <img src="/images/Apps/gallery.png" alt="">
+            <span>Gallery</span>
+          </div>
+        </div>
+        <div id="G3">
+          <div class="app">
+            <img src="/images/Apps/Google Keyboard.png" alt="">
+            <span>G Board</span>
+          </div>
+          <div class="app">
+            <img src="/images/Apps/Google.png" alt="">
+            <span>Google</span>
+          </div>
+          <div class="app">
+            <img src="/images/Apps/Instagram.png" alt="">
+            <span>Instagram</span>
+          </div>
+          <div class="app">
+            <img src="/images/Apps/linkedin.png" alt="">
+            <span>Lindin</span>
+          </div>
+        </div>
+        <div id="G4">
+          <div class="app">
+            <img src="/images/Apps/Maps.png" alt="">
+            <span>Maps</span>
+          </div>
+          <div class="app">
+            <img src="/images/Apps/message.png" alt="">
+            <span>Message</span>
+          </div>
+          <div class="app">
+            <img src="/images/Apps/Netflix.png" alt="">
+            <span>Netflix</span>
+          </div>
+          <div class="app">
+            <img src="/images/Apps/phone.png" alt="">
+            <span>Phone</span>
+          </div>
+        </div>
+        <div id="G5">
+          <div class="app">
+            <img src="/images/Apps/Play Store.png" alt="">
+            <span>Play Store</span>
+          </div>
+          <div class="app">
+            <img src="/images/Apps/Snapchat.png" alt="">
+            <span>Snapchat</span>
+          </div>
+          <div class="app">
+            <img src="/images/Apps/spotify1.png" data-link="spotify://" onclick="openApp(this)">
+            <span>Spotify</span>
+          </div>
+          <div class="app">
+            <img src="/images/Apps/Telegram.png" alt="">
+            <span>Telegram</span>
+          </div>
+        </div>
+        <div id="G6">
+          <div class="app">
+            <img src="/images/Apps/WhatsApp.png" data-link="whatsapp://" onclick="openApp(this)">
+            <span>WhatsApp</span>
+          </div>
+          <div class="app">
+            <img src="/images/Apps/Youtube.png" onclick="openApp(this)" data-link="https://www.youtube.com"  >
+            <span>Youtube</span>
+          </div>
+          <div class="app"></div>
+          <div class="app"></div>
+        </div>
+        <div id="G7">
+          <div class="app"></div>
+          <div class="app"></div>
+          <div class="app"></div>
+          <div class="app"></div>
+        </div>
+        <div id="G8">
+          <div class="app"></div>
+          <div class="app"></div>
+          <div class="app"></div>
+          <div class="app"></div>
+        </div>
+        <div id="G9">
+          <div class="app"></div>
+          <div class="app"></div>
+          <div class="app"></div>
+          <div class="app"></div>
+        </div>
+        <div id="G10">
+          <div class="app"></div>
+          <div class="app"></div>
+          <div class="app"></div>
+          <div class="app"></div>
+        </div>
+        <div id="G11">
+          <div class="app"></div>
+          <div class="app"></div>
+          <div class="app"></div>
+          <div class="app"></div>
+        </div>
+      </div>
+
+          <div id="appOpen">
+            <h1 id="appName">App opened</h1>
+          </div>
+
+      
+      <div id="container">
+        
+        <div id="nav-buttons">
+        <img
+          src="/images/buttons/recent.png"
+          alt="Recent"
+          onclick="showRecent()"
+        />
+        <img src="/images/buttons/home.png" alt="Home" onclick="goHome()" id="homeButton"/>
+        
+        <img src="/images/buttons/back.png" alt="Back" onclick="goBack()" id="backButton" />
+      </div>
+      </div>
+      <!-- Bottom nav bar -->
+      
+    </div>
+    <div id="buttons">
+        <div id="volumeKey">
+          <div id="volumeUp"></div>
+          <div id="volumeDown"></div>
+        </div>
+        
+        <div id="powerKey" ></div>
+    </div>
+    
+    <audio id="offSound" src="/Audio/screenLock.wav" ></audio>
+
+    <script src="script.js" ></script>
+  </body>
+</html>
