@@ -1,118 +1,253 @@
- *,
-*:before,
-*:after{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-}
-.fan{
-    height: 350px;
-    width: 350px;
-    position: absolute;
-    margin: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-}
-label{
-    display: block;
-    height: 20px;
-    width: 20px;
-    background-color: black;
-    position: absolute;
-    margin: 120px auto 0 auto;
-    left: 0;
-    right: 0;
-    border-radius: 50%;
-    animation: spin 1s infinite linear;
-    animation-play-state: paused;
-}
-@keyframes spin{
-    100%{
-        transform: rotate(360deg);
-    }    
+body {
+  display: flex;
+  justify-content: center; /* centers horizontally */
+  align-items: center;    /* centers vertically */
+  height: 100vh;          /* full screen height */
+  margin: 0;              /* remove default spacing */
+  background: rgb(88, 86, 86);      /* optional background */
+  /* background: url(/images/wallpaper/pexels-rachel-xiao-253850-772429.jpg) no-repeat center center;   */
 }
 
-label:after{
-    content: "";
-    position: absolute;
-    height: 70px;
-    width: 70px;
-    background-color: #005fe4;
-    border: 10px solid #00317e;
-    border-radius: 50%;
-    left: -25px;
-    bottom: -25px; 
-}
-label span{
-    display: block;
-    height: 120px;
-    width: 70px;
-    background-color: #fdbf00;
-    border-radius: 55% 45% 100% 0% / 39% 28% 72% 61%;
-    position: absolute;
-    z-index: -1;
-}
-span:nth-child(1){
-    bottom: 10px;
-    left: 10px;
-}
-span:nth-child(2){
-    transform: rotate(-120deg);
-    left: -95px;
-    top: -50px;
-}
-span:nth-child(3){
-    transform: rotate(-240deg);
-    right: -60px;
-    top: 10px;
-}
-.base{
-    height: 160px;
-    width: 20px;
-    background-color: #00317e;
-    position: absolute;
-    margin: auto;
-    left: 0;
-    right: 0;
-    top: 140px;
-    z-index: -1;
-}
-.base:after{
-    content: "";
-    position: absolute;
-    height: 35px;
-    width: 150px;
-    background-color: #fdbf00;
-    left: -65px;
-    top: 160px;
-    border-radius: 20px 20px 0 0;
-}
-input[type="checkbox"]{
-    position: absolute;
-    -webkit-appearance: none;
-    appearance: none;
-    height: 12px;
-    width: 20px;
-    background-color: #c30010;
-    position: absolute;
-    bottom: 50px;
-    left: 130px;
-    outline: none;
-    cursor: pointer;
-    border-radius: 5px 5px 0 0;
-}
-input[type="checkbox"]:checked{
-    height: 8px;
-}
-input[type="checkbox"]:checked + label{
-    animation-play-state: running;
+#Phone-layout {
+  width: 390px;   /* arbitrary width */
+  aspect-ratio: 9 / 19.5;
+  border: 13px solid black;
+ background: url(images/wallpaper/defaultWallpaper2.jpeg) no-repeat center center;  
+  background-color: rgb(154, 154, 154);
+   background-attachment: fixed;
+  border-radius: 30px;
+  background-size: cover;
+  position: relative; /* so child (camera) can be positioned */
+  overflow: hidden;   /* keeps wallpaper inside rounded corners */
+  box-shadow: 0 20px 30px rgba(0,0,0,0.5); /* optional shadow */
 }
 
-.title{
+#PhoneOff {
+  width: 390px;   /* arbitrary width */
+  aspect-ratio: 9 / 19.5;
+  border: 13px solid black;
+
+  background-color: rgb(21, 21, 21);
+   background-attachment: fixed;
+  border-radius: 30px;
+  background-size: cover;
+  position: relative; /* so child (camera) can be positioned */
+  overflow: hidden;   /* keeps wallpaper inside rounded corners */
+  box-shadow: 0 20px 30px rgba(0,0,0,0.5); /* optional shadow */
+}
+
+
+#buttons{
+  justify-content: space-between;
+  flex-direction: column;
+  display: flex;
+  gap:55px;  /* spacing between buttons */
+  padding-bottom: 400px;
   
-  padding-top: 50px;
+}
+
+#volumeKey{
+  justify-content: space-between;
+  flex-direction: column;
+  display: flex;
+  width: 0px;
+  cursor: pointer;
+  /* height: 90px;
+  border: 4px black solid;
+  border-radius: 0px 555px 555px 0px; */
+}
+
+#volumeUp{
+  width: 0px;
+  height: 55px;
+  border: 4px black solid;
+  border-radius: 0px 555px 555px 0px;
+}
+
+#volumeUp:active{
+  transform: scale(0.5);
+}
+
+#volumeDown{
+  width: 0px;
+  height: 55px;
+  border: 4px black solid;
+  border-radius: 0px 555px 555px 0px;
+}
+
+#volumeDown:active{
+  transform: scale(0.5);
+}
+
+#powerKey{
+  width: 0px;
+  height: 60px;
+  border: 4px black solid;
+  border-radius: 0px 555px 555px 0px;
+  cursor: pointer;
+}
+
+#powerKey:active{
+  transform: scale(0.65);
+}
+
+
+#camera {
+  width: 80px;               /* notch width */
+  height: 25px;              /* notch height */
+  background: black;         /* notch color */
+  border-radius: 0 0 20px 20px; /* rounded bottom corners */
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+#nav-buttons {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  border: none;
+  transform: translateX(-50%);
+  display: flex;
+  gap:105px;  /* spacing between buttons */
+  cursor: pointer;
+/* background-color: blueviolet; */
+}
+
+#nav-buttons img {
+  width: 32px;              /* size of icons */
+  height: 32px;
+  cursor: pointer;          /* show hand on hover */
+  transition: 0.2s ease;    /* smooth hover animation */
+}
+
+#nav-buttons img:hover {
+  transform: scale(1.4);    /* grow slightly on hover */
+  opacity: 0.8;             /* dim a little */
+}
+
+.check{
+    height: 100px;
+    width: 100%;
+    color: aliceblue;
+}
+
+#notificatonPannel{
+    width: 100%;
+    height: 30px;
+    justify-content: space-between;
+    display: flex;
+    padding: 1px;
+    align-items: center;
+    color: aliceblue;
+    cursor: pointer;
+    /* background-color: rgb(73, 73, 73); */
+}
+
+#notificatonPannel:hover{
+ background-color: rgba(255, 255, 255, 0.523);
+  opacity: 14;             /* dim a little */
+}
+
+
+.leftSide, .rightSide{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.rightSide{
+    padding-right: 5px;
+}
+
+#time {
+      font-size: 20px;
+      font-weight: bold;
+      padding-left: 5px;
+    }
+
+    #appOpen {
   text-align: center;
+  color: #ffffff;
+  padding-top: 15px;
+  position: absolute;
+  top: 31px;
+  bottom: 90px;
+  left: 0px;
+  right: 0px;
+  background-color: rgb(42, 42, 42);
+  /* border: #ffffff 2px solid ; */
+  display: none;
+}
+
+#grid{
+    margin-top: 30px;
+    height: 70%;
+    /* background-color: rgb(197, 125, 31); */
+    display: flex;
+    flex-direction: column; /* stack top to bottom */
+}
+
+#G1, #G2, #G3, #G4, #G5, #G6, .dockApps{
+    margin-top: 20px;
+    height : 70px;
+     /* background-color: rgb(255, 218, 169);  */
+    display: flex;
+    /* background-color: aqua;  */
+    gap: 10px;
+}
+
+.app {
+  /* background-color: black; */
+  color: white;   /* so "view" shows up */
+  width: 100%;
+  margin: 2px;
+ align-items: center;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
   justify-content: center;
+}
+
+.app img{
+    height: 60px;
+    width: 60px;
+
+}
+
+.app span{
+    font-size: small;
+   
+}
+
+.app img:hover {
+  transform: scale(1.16);
+}
+
+
+
+.systemIcons{
+    background-color: black ;
+}
+
+#dock{
+  /* background-color: bisque; */
+  width: 100%;
+  height: 60px;
+  
+  display: flex;
+  flex-direction: column; /* stack top to bottom */
+}
+
+.drawerArrow{
+padding-left: 45%;
+flex: 1;
+align-items: center;
+}
+
+.dockApps{
+  flex: 7;
+ 
 }
